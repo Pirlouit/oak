@@ -3,10 +3,10 @@ package main
 import (
 	"syscall/js"
 
-	"github.com/elliotforbes/oak"
+	"github.com/Pirlouit/oak"
 )
 
-func mycoolfunc(i []js.Value) {
+func mycoolfunc(this js.Value, i []js.Value) {
 	println("My Awesome Function")
 }
 

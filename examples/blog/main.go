@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/elliotforbes/oak"
-	"github.com/elliotforbes/oak/examples/blog/components"
-	"github.com/elliotforbes/oak/pkg/router"
+	"github.com/Pirlouit/oak"
+	"github.com/Pirlouit/oak/examples/blog/components"
+	"github.com/Pirlouit/oak/pkg/router"
 )
 
 func main() {

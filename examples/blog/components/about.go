@@ -3,7 +3,7 @@ package components
 import (
 	"syscall/js"
 
-	"github.com/elliotforbes/oak"
+	"github.com/Pirlouit/oak"
 )
 
 type AboutComponent struct{}
@@ -14,7 +14,7 @@ func init() {
 	oak.RegisterFunction("coolFunc", CoolFunc)
 }
 
-func CoolFunc(i []js.Value) {
+func CoolFunc(this js.Value, i []js.Value) {
 	println("does stuff")
 }
 

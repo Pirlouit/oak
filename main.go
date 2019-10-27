@@ -3,8 +3,8 @@ package oak
 import (
 	"syscall/js"
 
-	"github.com/elliotforbes/go-webassembly-framework/pkg/http"
-	"github.com/elliotforbes/go-webassembly-framework/pkg/utils"
+	"github.com/Pirlouit/oak/pkg/http"
+	"github.com/Pirlouit/oak/pkg/utils"
 )
 
 func registerCallbacks() {
@@ -13,8 +13,8 @@ func registerCallbacks() {
 	http.RegisterCallbacks()
 }
 
-func RegisterFunction(funcName string, myfunc func(i []js.Value)) {
-	js.Global().Set(funcName, js.NewCallback(myfunc))
+func RegisterFunction(funcName string, myfunc func(this js.Value, i []js.Value) interface{}) {
+	js.Global().Set(funcName, js.FuncOf(myfunc))
 }
 
 func Start() {

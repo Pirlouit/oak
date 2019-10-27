@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"runtime"
 
-	"github.com/elliotforbes/go-webassembly-framework/internal/commands"
+	"github.com/Pirlouit/oak/internal/commands"
 	"github.com/spf13/cobra"
 )
 
@@ -24,5 +24,7 @@ func main() {
 	rootCmd.AddCommand(commands.NewCmd)
 	rootCmd.AddCommand(commands.GenerateCmd)
 	rootCmd.AddCommand(commands.BuildCmd)
+	rootCmd.AddCommand(commands.GetCmd)
+	rootCmd.AddCommand(commands.Install)
 	rootCmd.Execute()
 }

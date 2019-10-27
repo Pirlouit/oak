@@ -1,7 +1,7 @@
 Oak - The Go WebAssembly Framework
 ===================================
 
-[![Godoc Reference](https://camo.githubusercontent.com/6321d9723db4c8f80466aaa83c19d4afb9fdd208/68747470733a2f2f676f646f632e6f72672f6769746875622e636f6d2f6f616b6d6f756e642f6f616b3f7374617475732e737667)](https://godoc.org/github.com/elliotforbes/go-webassembly-framework)  [![Travis Build Status](https://api.travis-ci.org/elliotforbes/oak.svg?branch=master)](https://travis-ci.org/elliotforbes/go-webassembly-framework)  [![Go Report Card](https://goreportcard.com/badge/github.com/elliotforbes/oak)](https://goreportcard.com/report/github.com/elliotforbes/go-webassembly-framework)
+[![Godoc Reference](https://camo.githubusercontent.com/6321d9723db4c8f80466aaa83c19d4afb9fdd208/68747470733a2f2f676f646f632e6f72672f6769746875622e636f6d2f6f616b6d6f756e642f6f616b3f7374617475732e737667)](https://godoc.org/github.com/elliotforbes/go-webassembly-framework)  [![Travis Build Status](https://api.travis-ci.org/elliotforbes/oak.svg?branch=master)](https://travis-ci.org/elliotforbes/go-webassembly-framework)  [![Go Report Card](https://goreportcard.com/badge/github.com/Pirlouit/oak/)](https://goreportcard.com/report/github.com/elliotforbes/go-webassembly-framework)
 
 
 <img alt="Oak Framework" width="100px" height="100px" src="logo.jpg" /> 
@@ -41,10 +41,10 @@ package main
 import (
 	"syscall/js"
 
-	"github.com/elliotforbes/oak"
+	"github.com/Pirlouit/oak"
 )
 
-func mycoolfunc(i []js.Value) {
+func mycoolfunc(this js.Value, i []js.Value) {
 	println("My Awesome Function")
 }
 
@@ -85,7 +85,7 @@ package components
 import (
 	"syscall/js"
 
-	"github.com/elliotforbes/oak"
+	"github.com/Pirlouit/oak"
 )
 
 type AboutComponent struct{}
@@ -96,7 +96,7 @@ func init() {
 	oak.RegisterFunction("coolFunc", CoolFunc)
 }
 
-func CoolFunc(i []js.Value) {
+func CoolFunc(this js.Value, i []js.Value) {
 	println("does stuff")
 }
 
@@ -114,10 +114,10 @@ func (a AboutComponent) Render() string {
 package main
 
 import (
-	"github.com/elliotforbes/oak"
-	"github.com/elliotforbes/oak/router"
+	"github.com/Pirlouit/oak"
+	"github.com/Pirlouit/oak/router"
 
-	"github.com/elliotforbes/oak/examples/blog/components"
+	"github.com/Pirlouit/oak/examples/blog/components"
 )
 
 func main() {

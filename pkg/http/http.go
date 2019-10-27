@@ -5,9 +5,10 @@ import (
 )
 
 func RegisterCallbacks() {
-	js.Global().Set("get", js.NewCallback(GetRequest))
+	js.Global().Set("get", js.FuncOf(GetRequest))
 }
 
-func GetRequest(i []js.Value) {
+func GetRequest(this js.Value, i []js.Value) interface{} {
 	println("Does nothing")
+	return nil
 }
